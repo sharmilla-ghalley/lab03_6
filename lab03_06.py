@@ -59,3 +59,19 @@ selected_students = sorted(selected_students, key=lambda entry: entry[2])  # Sor
 if len(selected_students) == 0:
     print("No Group 6 students found with even Student IDs.")  # Notify if no student matched the condition.
     exit()  # Stop because the filtered list is empty.
+    first_student = selected_students[0]  # The first student after sorting by ID.
+last_student = selected_students[-1]  # The last student after sorting by ID.
+
+output_lines = []  # Collect output lines for printing and saving.
+output_lines.append("=" * 50)  # Add a separator line.
+output_lines.append("GROUP 6 STUDENT LIST")  # Add a title line.
+output_lines.append("=" * 50)  # Repeat the separator.
+output_lines.append(f"Total students assigned to Group 6: {len(selected_students)}")  # Print the count.
+output_lines.append("")  # Add a blank line.
+output_lines.append("Selected students:")  # Add a label for the list.
+output_lines.append("-" * 30)  # Add a line below the label.
+
+count = 1  # Start counting selected students.
+for _, name, student_id in selected_students:
+    output_lines.append(f"{count}. {name} (ID: {student_id})")  # Add each student line.
+    count += 1  # Increase the counter.
