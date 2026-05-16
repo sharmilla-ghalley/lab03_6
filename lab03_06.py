@@ -40,3 +40,22 @@ for row in student_lines:
 if len(records) == 0:
     print("No student records were found after parsing.")  # Notify if parsing found no valid records.
     exit()  # Stop because there is nothing to filter. 
+
+    # Check whether a Student ID ends with an even digit.
+def student_id_is_even(student_id):
+    student_id = student_id.strip()  # Remove whitespace from the ID.
+    if student_id == "":
+        return False  # Return False for empty IDs.
+    final_digit = student_id[-1]  # Take the last character of the ID.
+    return final_digit in ["0", "2", "4", "6", "8"]  # True when the last digit is even.
+
+selected_students = []  # List to store students who belong to Group 6.
+for serial, name, student_id in records:
+    if student_id_is_even(student_id):  # Check each student ID for evenness.
+        selected_students.append((serial, name, student_id))  # Keep the student if the ID is even.
+
+selected_students = sorted(selected_students, key=lambda entry: entry[2])  # Sort the selected records by Student ID.
+
+if len(selected_students) == 0:
+    print("No Group 6 students found with even Student IDs.")  # Notify if no student matched the condition.
+    exit()  # Stop because the filtered list is empty.
