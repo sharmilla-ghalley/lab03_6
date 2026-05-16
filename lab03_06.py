@@ -14,4 +14,29 @@ except FileNotFoundError:
 
 if len(lines) == 0:
     print("Error: The input file is empty.")  # Notify if the file has no content.
-    exit()  # Stop the program because there is nothing to process.  
+    exit()  # Stop the program because there is nothing to process. 
+    # Ignore the header row and keep only student data rows.
+header_line = lines[0].strip()  # Remove whitespace from the header line.
+student_lines = lines[1:]  # All lines after the first are actual student records.
+
+records = []  # Create a list to save parsed student records.
+for row in student_lines:
+    row = row.strip()  # Remove extra spaces from the current line.
+    if row == "":
+        continue  # Skip blank lines without data.
+
+    if '\t' in row:
+        parts = [item.strip() for item in row.split('\t') if item.strip()]  # Split tab-separated columns.
+    elif ',' in row:
+        parts = [item.strip() for item in row.split(',') if item.strip()]  # Split comma-separated columns.
+    else:
+        parts = [item.strip() for item in row.split() if item.strip()]  # Split by whitespace if no tab or comma.
+
+    if len(parts) < 3:
+        continue  # Skip rows that do not have three columns.
+
+    records.append((parts[0], parts[1], parts[2]))  # Save serial, name, and ID as a tuple.
+
+if len(records) == 0:
+    print("No student records were found after parsing.")  # Notify if parsing found no valid records.
+    exit()  # Stop because there is nothing to filter. 
