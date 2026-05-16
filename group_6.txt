@@ -1,0 +1,30 @@
+==================================================
+GROUP 6 STUDENT LIST
+==================================================
+Total students assigned to Group 6: 14
+
+Selected students:
+------------------------------
+1. Arjun Bhattarai (ID: 08250262)
+2. Chimi Youden (ID: 08250264)
+3. Dorji Tshering (ID: 08250266)
+4. Karma Seldon (ID: 08250268)
+5. Karma Sangay Namgyel (ID: 08250270)
+6. Kezang Dechen (ID: 08250272)
+7. Kinga Rinchen (ID: 08250274)
+8. Namdrel Zangpo (ID: 08250276)
+9. Pralad Adhikari (ID: 08250278)
+10. Sangay Dorji (ID: 08250280)
+11. Sarmilla Ghalley (ID: 08250282)
+12. Sonam Tobgay (ID: 08250284)
+13. Sumitra Allay (ID: 08250286)
+14. Ugyen Dorji (ID: 08250288)
+
+First student by ID:
+  Name: Arjun Bhattarai
+  ID  : 08250262
+
+Last student by ID:
+  Name: Ugyen Dorji
+  ID  : 08250288
+==================================================
