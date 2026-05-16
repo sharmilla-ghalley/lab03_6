@@ -75,3 +75,22 @@ count = 1  # Start counting selected students.
 for _, name, student_id in selected_students:
     output_lines.append(f"{count}. {name} (ID: {student_id})")  # Add each student line.
     count += 1  # Increase the counter.
+
+    output_lines.append("")  # Blank line before first/last information.
+output_lines.append("First student by ID:")  # Label for first student.
+output_lines.append(f"  Name: {first_student[1]}")  # Show the first student's name.
+output_lines.append(f"  ID  : {first_student[2]}")  # Show the first student's ID.
+output_lines.append("")  # Blank line before last student.
+output_lines.append("Last student by ID:")  # Label for last student.
+output_lines.append(f"  Name: {last_student[1]}")  # Show the last student's name.
+output_lines.append(f"  ID  : {last_student[2]}")  # Show the last student's ID.
+output_lines.append("=" * 50)  # Final separator line.
+
+for line in output_lines:
+    print(line)  # Print each line to the screen.
+
+with open(destination_path, "w") as output_file:  # Open the output file in write mode.
+    for line in output_lines:
+        output_file.write(line + "\n")  # Save each line to the file.
+
+print(f"Results saved to {destination_path}.")  # Final confirmation message.
