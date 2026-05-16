@@ -59,7 +59,8 @@ selected_students = sorted(selected_students, key=lambda entry: entry[2])  # Sor
 if len(selected_students) == 0:
     print("No Group 6 students found with even Student IDs.")  # Notify if no student matched the condition.
     exit()  # Stop because the filtered list is empty.
-    first_student = selected_students[0]  # The first student after sorting by ID.
+
+first_student = selected_students[0]  # The first student after sorting by ID.
 last_student = selected_students[-1]  # The last student after sorting by ID.
 
 output_lines = []  # Collect output lines for printing and saving.
@@ -76,7 +77,7 @@ for _, name, student_id in selected_students:
     output_lines.append(f"{count}. {name} (ID: {student_id})")  # Add each student line.
     count += 1  # Increase the counter.
 
-    output_lines.append("")  # Blank line before first/last information.
+output_lines.append("")  # Blank line before first/last information.
 output_lines.append("First student by ID:")  # Label for first student.
 output_lines.append(f"  Name: {first_student[1]}")  # Show the first student's name.
 output_lines.append(f"  ID  : {first_student[2]}")  # Show the first student's ID.
